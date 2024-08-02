@@ -47,6 +47,12 @@ function Form ({type}) {
             setError("");
             setLoading(true);
 
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+
             const formData = new FormData(e.target);
 
             if(type === "login") {
@@ -117,7 +123,7 @@ function Form ({type}) {
 
     return (
         <>
-            <h1 className="text-center text-xl lg:text-3xl font-bold my-5">{(type === "login")? "Login to your account" : "Create a new account"}</h1>
+            <h1 className="text-center text-xl lg:text-3xl font-bold my-5" id="title">{(type === "login")? "Login to your account" : "Create a new account"}</h1>
             {error && <ErrorAlert>{error}</ErrorAlert>}
             {loading && <Loader color="#000" size={40} />}
             <form id="myForm" className="mx-auto flex flex-col my-5 w-11/12 lg:w-1/4 " onSubmit = {handleSubmit} encType="multipart/form-data">

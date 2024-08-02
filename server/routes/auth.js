@@ -42,7 +42,7 @@ router.post('/register', upload.single('picture'), async (req, res) => {
                 res.status(409).json({ message: "User already exists" });
             } else {
                 // Save the user to the database
-                pool.query('INSERT INTO users (username, name, email, password, phone, address, sex, dateOfBirth, fileName) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [username, name, email, password, phone, address, sex, dateOfBirth, file.filename], async (error, results) => {
+                pool.query('INSERT INTO users (username, name, email, password, phone, address, sex, dateOfBirth, fileName) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [username, name, email, hashedPassword, phone, address, sex, dateOfBirth, file.filename], async (error, results) => {
                     if (error) {
                         console.log(error);
                         res.status(500).json({ message: "Internal server error" });
