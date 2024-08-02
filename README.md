@@ -13,12 +13,12 @@ Then go to the client folder and run **npm install**. Do the same thing in the s
 The next step is to fill the .env file in the server folder.
 Here are the needed variables:
 
-PORT=
-DB_HOST=
-DB_USER=
-DB_PASSWORD=
-DB_NAME=
-JWT_SECRET=
+PORT= 
+DB_HOST= 
+DB_USER= 
+DB_PASSWORD= 
+DB_NAME= 
+JWT_SECRET= 
 
 Now to run the app, go to the **server folder and run npm run dev** and then go to the **client folder and run npm start**.
 
